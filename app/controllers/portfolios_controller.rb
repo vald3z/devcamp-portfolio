@@ -32,10 +32,8 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
         format.html { redirect_to portfolios_path, notice: 'Record was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,4 +41,18 @@ class PortfoliosController < ApplicationController
   def show
   @portfolio_item = Portfolio.find(params[:id])
   end
+  
+   def destroy
+     # Perform the lookup
+     @portfolio_item = Portfolio.find(params[:id])
+     
+     # Destroy/delete the record
+    @portfolio_item.destroy
+    
+    # Redirect
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Record was successfully BANISHED.' }
+    end
+   end
+  
 end
