@@ -1,6 +1,5 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-  layout "blog"
 
   # GET /blogs
   # GET /blogs.json
@@ -25,10 +24,10 @@ class BlogsController < ApplicationController
   def edit
   end
 
-   # POST /blogs
+  # POST /blogs
   # POST /blogs.json
   def create
-    @blog= Blog.new(blog_params)
+    @blog = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save
@@ -58,19 +57,19 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully BANISHED.' }
+      format.html { redirect_to blogs_url, notice: 'Post was removed.' }
       format.json { head :no_content }
     end
   end
-  
+
   def toggle_status
     if @blog.draft?
       @blog.published!
     elsif @blog.published?
       @blog.draft!
     end
-    
-    redirect_to blogs_url, notice: 'Post status was successfully updated.'
+        
+    redirect_to blogs_url, notice: 'Post status has been updated.'
   end
 
   private
@@ -81,7 +80,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog)
+      params.require(:blog).permit(:title, :body)
     end
 end
-  
