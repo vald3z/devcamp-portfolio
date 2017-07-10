@@ -57,4 +57,4 @@ gem 'devise', '~> 4.3'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
-gem 'devcamp_valdez', git: 'https://github.com/vald3z/devcamp_valdez'
+gem 'devcamp_valdez', '~> 0.1.0'
