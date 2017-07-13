@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%=  @page_title %></title>
     <%= csrf_meta_tags %>
     
@@ -11,14 +13,66 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  
+    
+    <!--start of navigation -->
+ <div class="collapse bg-inverse" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Hi! I'm Catalina. I am brand new to programming. I'm beginning to learn Ruby on Rails and I seek to further my experience with Javascript, HTML, CSS, Ruby, and any other language I can get my hands on.</p>
+          </div>
+          <div class="col-sm-4 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">Album</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <!-- end of navigation -->
+    
+    <!-- start of masthead -->
+     <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Welcome to My Album </h1>
+        <p class="lead text-muted">Here you'll find photos to accompany you as you read. Yerr welcome</p>
+        <p>
+          <a href="#" class="btn btn-primary">Main call to action</a>
+          <a href="#" class="btn btn-secondary">Secondary action</a>
+        </p>
+      </div>
+    </section>
+    <!-- end of masthead -->
+    
     <%= render "shared/nav", location: 'top' %>
 
     <%= login_helper %>
 
     <%= yield %>
+
+    
+    <footer class="text-muted">
+   <div class="container">
+     <p class="float-right">
+       <a href="#">Back to top</a>
+     </p>
+     <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+     <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+     </div>
+   </footer>
 
        <%= source_helper("application") %>
   </body>
