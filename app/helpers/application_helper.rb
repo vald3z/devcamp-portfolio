@@ -17,6 +17,6 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    DevcampValdez::Renderer.copyright 'Catalina Valdez', 'All rights reserved'
+    DevcampValdez::Renderer.copyright 'Cooper Madsen', 'All rights reserved'
   end
 end
