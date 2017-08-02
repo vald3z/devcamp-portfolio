@@ -207,3 +207,20 @@ body {
  .app-footer {
    color: white;
  }
+ 
+.app-card-container {
+  text-align: left;
+  color: SteelBlue;
+}
+
+.app-card-container > .card {
+  padding: 20px;
+}
+
+.app-card-container-contact {
+  color: SteelBlue;
+}
+
+.app-card-container a {
+  color: SteelBlue;
+}
