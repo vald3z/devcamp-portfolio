@@ -1,13 +1,77 @@
-<h1>About Me</h1>
+<div class="app-card-container">
+  <div class="card">
+       <h1>About Me</h1>
+   
+   <div class="row">
+     <div class="col-md-5">
+     <%= image_tag "Catalina.jpg", width: 350, alt: "Profile image" %> 
+     
+     <div class="skills">
+       <% @skills.each do |skill| %>
+       <h4><%= skill.title %></h4>
+       <div class="progress">
+         <div 
+         class="progress-bar progress-bar-striped bg-warning"
+         role="progressbar"
+         aria-valuenow="<%= skill.percent_utilized %>"
+         aria-valuemax="100"
+         style="width: <%= skill.percent_utilized %>%"
+         ></div>
+         </div>
+       <% end %>
+      </div>
+     </div>
+     
+     <div class="col-md-7">
+       <p>I'm new to programming, but I'm learning quickly and my interest continues to grow. I'm currently learning Ruby on Rails. I also have some experience with HTML and CSS.</p>
+     
+       <p>
+          <button
+            class="btn btn-info"
+            type="button"
+            data-toggle="collapse"
+            data-target="#workHistory"
+            aria-expanded="false"
+            aria-controler="workHistory"
+          >
+            Job History
+          </button>
 
-<div class="row">
-  <div class="col-md-4">
-  <%= image_tag "SUSHI.jpg", width: 300, alt: "Profile image" %> 
-  </div>
-  
-  <div class="col-md-8">
-    <p>I'm new to programming, but I'm learning quickly and my interest continues to grow. I'm currently learning Ruby on Rails. I also have some experience with HTML and CSS.</p>
+          <button
+            class="btn btn-info"
+            type="button"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded="false"
+            aria-controler="education"
+          >
+            Education
+          </button>
+        </p>
+
+        <p>
+          <div class="collapse" id="workHistory">
+            <div class="card card-block">
+              Seven Peaks Waterpark 
+            </div>
+            <div class="card card-block">
+              Five Guys Burgers and Fries
+            </div>
+            <div class="card card-block">
+              Five Sushi Brothers
+            </div>
+          </div>
+
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              Provo High School
+            </div>
+            <div class="card card-block">
+              Code to Success Graduate
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
-
-
